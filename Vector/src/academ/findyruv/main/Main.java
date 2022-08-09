@@ -2,8 +2,6 @@ package academ.findyruv.main;
 
 import academ.findyruv.vector.VectorClass;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Vector;
 
 public class Main {
@@ -35,7 +33,7 @@ public class Main {
         VectorClass newVector = new VectorClass(5);
         newVector.addNumber(3);
 
-        System.out.println(newVector.toString());
+        System.out.println(newVector);
 
         System.out.println(2);
 
@@ -43,21 +41,36 @@ public class Main {
         vector2.add(newVector);
 
         VectorClass newVector2 = new VectorClass(vector2);
-        System.out.println(newVector2.toString());
+        System.out.println(newVector2);
 
         System.out.println(3);
-        Vector vector3 = new Vector();
+        Vector<Double> vector3 = new Vector<>();
         double[] masNewVector3 = {3.5, 21, 67.5};
 
         VectorClass newVector3 = new VectorClass(masNewVector3, vector3);
-        System.out.println(newVector3.toString());
+        System.out.println(newVector3);
 
         System.out.println(4);
-        Vector vector4 = new Vector();
+        Vector<Double> vector4 = new Vector<>();
         VectorClass newVector4 = new VectorClass(5, masNewVector3, vector4);
-        System.out.println(newVector4.toString());
+        System.out.println(newVector4);
 
-        System.out.println("sum");
+        newVector4.setVector(vector4, vector4);
         System.out.println(newVector4.sum(vector4, vector4));
+
+        System.out.println(newVector4.min(vector4, vector4));
+
+        System.out.println(newVector4.scalar(vector4).toString());
+
+        System.out.println(newVector4.reversal(vector3));
+
+        System.out.println(newVector4.getLength(vector4));
+
+        System.out.println(newVector4.index(1, vector4));
+        System.out.println(vector4.hashCode());
+        System.out.println(vector3.hashCode());
+        System.out.println(vector4.equals(vector3));
+
+        System.out.println(VectorClass.getSum(vector4, vector4).toString());
     }
 }
