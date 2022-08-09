@@ -1,16 +1,12 @@
 package academ.findyruv.main;
 
 import academ.findyruv.vector.VectorClass;
-import academ.findyruv.vector.VectorClass2;
-import academ.findyruv.vector.VectorClass3;
-import academ.findyruv.vector.VectorClass4;
 
-import java.util.Arrays;
 import java.util.Vector;
 
 public class Main {
     public static void main(String[] args) {
-        Vector<Object> vector1 = new Vector<>(5);
+       /* Vector<Object> vector1 = new Vector<>(5);
         vector1.add(5);
 
         Vector<Object> vector2 = new Vector<>(vector1);
@@ -32,21 +28,33 @@ public class Main {
             }
         }
         System.out.println(vector4);
-
+*/
+        System.out.println(1);
         VectorClass newVector = new VectorClass(5);
         newVector.addNumber(3);
+
         System.out.println(newVector);
 
-        VectorClass2 newVector2 = new VectorClass2(5, newVector);
+        System.out.println(2);
+
+        Vector v = new Vector();
+        v.add(newVector);
+
+        VectorClass newVector2 = new VectorClass(v);
         System.out.println(newVector2);
+
+        System.out.println(3);
 
         double[] masNewVector3 = {3.5, 21, 67.5};
 
-        System.out.println("Vector 3");
-        VectorClass3 newVector3 = new VectorClass3(5, masNewVector3);
-        System.out.println(newVector3.getVector3());
+        VectorClass newVector3 = new VectorClass(masNewVector3);
+        Vector vec = new Vector();
+        vec.add(newVector3);
+        System.out.println(vec);
 
-        VectorClass4 newVector4 = new VectorClass4(5, masNewVector3);
-        System.out.println(newVector4.getVector4());
+        System.out.println(4);
+
+        VectorClass newVector4 = new VectorClass(5, masNewVector3);
+        System.out.println(newVector4.toString());
     }
 }
