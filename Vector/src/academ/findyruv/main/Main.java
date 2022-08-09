@@ -2,6 +2,8 @@ package academ.findyruv.main;
 
 import academ.findyruv.vector.VectorClass;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Vector;
 
 public class Main {
@@ -33,28 +35,29 @@ public class Main {
         VectorClass newVector = new VectorClass(5);
         newVector.addNumber(3);
 
-        System.out.println(newVector);
+        System.out.println(newVector.toString());
 
         System.out.println(2);
 
-        Vector v = new Vector();
-        v.add(newVector);
+        Vector vector2 = new Vector();
+        vector2.add(newVector);
 
-        VectorClass newVector2 = new VectorClass(v);
-        System.out.println(newVector2);
+        VectorClass newVector2 = new VectorClass(vector2);
+        System.out.println(newVector2.toString());
 
         System.out.println(3);
-
+        Vector vector3 = new Vector();
         double[] masNewVector3 = {3.5, 21, 67.5};
 
-        VectorClass newVector3 = new VectorClass(masNewVector3);
-        Vector vec = new Vector();
-        vec.add(newVector3);
-        System.out.println(vec);
+        VectorClass newVector3 = new VectorClass(masNewVector3, vector3);
+        System.out.println(newVector3.toString());
 
         System.out.println(4);
-
-        VectorClass newVector4 = new VectorClass(5, masNewVector3);
+        Vector vector4 = new Vector();
+        VectorClass newVector4 = new VectorClass(5, masNewVector3, vector4);
         System.out.println(newVector4.toString());
+
+        System.out.println("sum");
+        System.out.println(newVector4.sum(vector4, vector4));
     }
 }
