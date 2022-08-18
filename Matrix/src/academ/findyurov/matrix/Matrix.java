@@ -51,8 +51,18 @@ public class Matrix {
     }
 
     public void print(Vector<String>[] vector) {
-        for (int i = 0; i < vector.length; i++) {
-            System.out.println(Arrays.toString(new Vector[]{vector[i]}));
+        for (Vector<String> strings : vector) {
+            System.out.println(Arrays.toString(new Vector[]{strings}));
+        }
+    }
+
+    public void print(double[][] array) {
+        for (double[] doubles : array) {
+            for (int j = 0; j < array[0].length; j++) {
+                System.out.print(doubles[j] + " ");
+            }
+
+            System.out.println();
         }
     }
 
@@ -64,5 +74,41 @@ public class Matrix {
         }
 
         return mas;
+    }
+
+    public double[][] transposeMatrix(double[][] array) {
+        double[][] temp = new double[array[0].length][array.length];
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[0].length; j++) {
+                temp[j][i] = array[i][j];
+            }
+        }
+
+        return temp;
+    }
+
+    public Vector<String>[] transposeMatrix(Vector<String>[] vector) {
+        String[][] temp = new String[vector.length][vector[0].size()];
+
+        for (int i = 0; i < vector.length; i++) {
+            for (int j = 0; j < vector[0].size(); j++) {
+                temp[i][j] = vector[i].get(j);
+            }
+        }
+
+        Vector<String>[] newVector = vector;
+
+        for (int i = 0; i < vector[0].size(); i++) {
+            Vector<String> row = new Vector<>(vector.length);
+
+            for (int j = 0; j < vector.length; j++) {
+                row.add(j, vector[j].get(i));
+            }
+
+            newVector[i].addAll(row);
+        }
+
+        return newVector;
     }
 }

@@ -7,8 +7,9 @@ import java.util.Vector;
 
 public class Main {
     public static void main(String[] args) {
-        double[][] array = new double[5][5];
+        double[][] array = new double[2][5];
         Vector<String>[] vector = (Vector<String>[]) new Vector[6];
+
         for (int i = 0; i < vector.length; i++) {
             vector[i] = new Vector<>();
 
@@ -27,16 +28,24 @@ public class Main {
         System.out.println(Arrays.deepToString(obj3.getMatrix()));
         System.out.println(Arrays.deepToString(obj4.getMatrixVector()));
 
-        System.out.println(Arrays.toString(obj1.getDimensions()));
-        System.out.println(Arrays.toString(obj4.getDimensionsVector()));
+        // System.out.println(Arrays.toString(obj1.getDimensions()));
+        //System.out.println(Arrays.toString(obj4.getDimensionsVector()));
 
         System.out.println(obj4.get(0, 0));
-        obj4.write(0, 1);
+       // obj4.write(0, 1);
         System.out.println(obj4.get(0, 0));
         System.out.println();
 
         obj4.print(obj4.getMatrixVector());
 
-        System.out.println(Arrays.toString(obj4.stolb(0)));
+        System.out.println(Arrays.toString(obj4.stolb(2)));
+
+        obj3.print(array);
+        obj3.print(obj3.transposeMatrix(array));
+        System.out.println();
+
+        obj4.print(vector);
+        System.out.println();
+        obj4.print(obj4.transposeMatrix(vector));
     }
 }
