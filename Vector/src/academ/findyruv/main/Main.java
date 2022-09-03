@@ -1,52 +1,47 @@
 package academ.findyruv.main;
 
-import academ.findyruv.vector.VectorClass;
-import academ.findyruv.vector.VectorClass2;
-import academ.findyruv.vector.VectorClass3;
-import academ.findyruv.vector.VectorClass4;
-
-import java.util.Arrays;
-import java.util.Vector;
+import academ.findyruv.vector.Vector;
 
 public class Main {
     public static void main(String[] args) {
-        Vector<Object> vector1 = new Vector<>(5);
-        vector1.add(5);
+        Vector vectorObject1 = new Vector(5);
+        vectorObject1.addNumber(3);
+        System.out.println(vectorObject1);
 
-        Vector<Object> vector2 = new Vector<>(vector1);
-        System.out.println(vector1);
-        System.out.println(vector2);
+        java.util.Vector vector1 = new java.util.Vector();
+        vector1.add(vectorObject1);
+        Vector vectorObject2 = new Vector(vector1);
+        System.out.println(vectorObject2.toString());
 
-        String[] mas = {"Hello", "Bye", "ok"};
-        Vector<String> vector3 = new Vector<>(Arrays.asList(mas));
+        java.util.Vector<Double> vector2 = new java.util.Vector<>();
+        double[] arrayVector = {3.5, 21, 67.5};
+        Vector vectorObject3 = new Vector(arrayVector, vector2);
+        System.out.println(vectorObject3);
 
-        System.out.println(vector3);
+        java.util.Vector<Double> vector3 = new java.util.Vector<>();
+        Vector vectorObject4 = new Vector(5, arrayVector, vector3);
+        System.out.println(vectorObject4);
 
-        Vector<String> vector4 = new Vector<>();
-        int n = 5;
-        for (int i = 0; i < n; i++) {
-            if (i >= mas.length) {
-                vector4.add(null);
-            } else {
-                vector4.addElement(mas[i]);
-            }
-        }
-        System.out.println(vector4);
+        System.out.println(vectorObject4.amount(vector3, vector3));
 
-        VectorClass newVector = new VectorClass(5);
-        newVector.addNumber(3);
-        System.out.println(newVector);
+        System.out.println(vectorObject4.difference(vector3, vector3));
 
-        VectorClass2 newVector2 = new VectorClass2(5, newVector);
-        System.out.println(newVector2);
+        System.out.println(vectorObject4.scalarMultiplication(vector3).toString());
 
-        double[] masNewVector3 = {3.5, 21, 67.5};
+        System.out.println(vectorObject4.reversal(vector2));
 
-        System.out.println("Vector 3");
-        VectorClass3 newVector3 = new VectorClass3(5, masNewVector3);
-        System.out.println(newVector3.getVector3());
+        System.out.println(vectorObject4.getLength(vector3));
 
-        VectorClass4 newVector4 = new VectorClass4(5, masNewVector3);
-        System.out.println(newVector4.getVector4());
+        System.out.println(vectorObject4.index(1, vector3));
+
+        System.out.println(vector3.hashCode());
+
+        System.out.println(vector2.hashCode());
+
+        System.out.println(vector3.equals(vector2));
+
+        System.out.println(Vector.getAmount(vector3, vector3).toString());
+        System.out.println(Vector.getDifference(vector3, vector3));
+        System.out.println(Vector.scalarProduct(vector3, vector3));
     }
 }
