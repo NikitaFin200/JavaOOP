@@ -32,4 +32,59 @@ public class Range {
     public boolean isInside(double number) {
         return number >= from && number <= to;
     }
+
+    public double[] getInterval(double from1, double to1, double from2, double to2) {
+        double[] intervalPoints = new double[2];
+
+        if (from2 >= from1 && from2 <= to1) {
+            intervalPoints[0] = from2;
+        } else if (from2 < from1 && (to1 >= from1 || to1 <= to2)) {
+            intervalPoints[0] = from1;
+        } else {
+            return null;
+        }
+
+        if (to2 >= from1 && to2 <= to1) {
+            intervalPoints[1] = to2;
+        } else {
+            intervalPoints[1] = to1;
+        }
+
+        return intervalPoints;
+    }
+
+    public double[] getUnification(double from1, double to1, double from2, double to2) {
+        double[] intervalPoints = new double[2];
+
+        if (from2 < from1 && to2 == to1) {
+            intervalPoints[0] = from1;
+            intervalPoints[1] = to2;
+        } else if (from2 == from1 && to2 > to1) {
+            intervalPoints[0] = from2;
+            intervalPoints[1] = to1;
+        } else if (from2 > from1 && (to2 > to1 && from2 < to1)) {
+            intervalPoints[0] = from2;
+            intervalPoints[1] = to1;
+        } else if (from2 > from1 && to2 < to1) {
+            intervalPoints[0] = from2;
+            intervalPoints[1] = to2;
+        } else {
+            return null;
+        }
+
+        return intervalPoints;
+    }
+
+    public double[] getDifference(double from1, double to1, double from2, double to2) {
+        double[] intervalPoints = new double[2];
+
+        if ((to2 - from2) > (to1 - from1)) {
+            return intervalPoints = new double[0];
+        }
+
+        intervalPoints[0] = from1;
+        intervalPoints[1] = to1 - (to2 - from2);
+
+        return intervalPoints;
+    }
 }
