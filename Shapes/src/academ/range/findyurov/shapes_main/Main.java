@@ -1,11 +1,11 @@
-package academ.findyurov.shapes_main;
+package academ.range.findyurov.shapes_main;
 
 
-import academ.findyurov.circle.Circle;
-import academ.findyurov.rectangle.Rectangle;
-import academ.findyurov.shapes.Shapes;
-import academ.findyurov.square.Square;
-import academ.findyurov.triangle.Triangle;
+import academ.range.findyurov.circle.Circle;
+import academ.range.findyurov.rectangle.Rectangle;
+import academ.range.findyurov.shapes.Shapes;
+import academ.range.findyurov.square.Square;
+import academ.range.findyurov.triangle.Triangle;
 
 import java.util.ArrayList;
 import java.util.Arrays;

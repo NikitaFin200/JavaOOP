@@ -1,27 +1,27 @@
-package academ.findyurov.circle;
+package academ.range.findyurov.rectangle;
 
-import academ.findyurov.shapes.Shapes;
+import academ.range.findyurov.shapes.Shapes;
 
-public record Circle(double radius, String name) implements Shapes {
+public record Rectangle(double length1, double length2, String name) implements Shapes {
 
     @Override
     public double getWidth() {
-        return radius * 2;
+        return length2;
     }
 
     @Override
     public double getHeight() {
-        return radius * 2;
+        return length1;
     }
 
     @Override
     public double getArea() {
-        return Math.PI * Math.pow(radius, 2);
+        return length1 * length2;
     }
 
     @Override
     public double getPerimeter() {
-        return 2 * Math.PI * radius;
+        return 2 * length1;
     }
 
     public boolean equals(Object o) {//переопределение метода equals
@@ -35,15 +35,13 @@ public record Circle(double radius, String name) implements Shapes {
             return false;
         }
         Shapes e = (Shapes) o;
-        return (this.getWidth() == e.getWidth());
+        return (this.getPerimeter() == e.getPerimeter());
     }
 
-    public int hashCode()                                      //переопределение метода hashCode
-    {
+    public int hashCode() {                                //переопределение метода hashCode
         final int PRIME = 31;
         double result = 1;
-        result = PRIME * result + getWidth();
+        result = PRIME * result + getHeight();
         return (int) result;
     }
 }
-

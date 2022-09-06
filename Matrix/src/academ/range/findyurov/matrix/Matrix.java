@@ -1,4 +1,4 @@
-package academ.findyurov.matrix;
+package academ.range.findyurov.matrix;
 
 import java.util.Arrays;
 import java.util.Vector;

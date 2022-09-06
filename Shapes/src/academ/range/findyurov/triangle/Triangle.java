@@ -1,6 +1,6 @@
-package academ.findyurov.triangle;
+package academ.range.findyurov.triangle;
 
-import academ.findyurov.shapes.Shapes;
+import academ.range.findyurov.shapes.Shapes;
 
 public class Triangle implements Shapes {
 

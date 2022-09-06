@@ -1,4 +1,4 @@
-package academ.findyurov.range;
+package academ.range.findyurov.range;
 
 public class Range {
     private double from;

@@ -1,6 +1,6 @@
-package academ.findyurov.main;
+package academ.range.findyurov.main;
 
-import academ.findyurov.matrix.Matrix;
+import academ.range.findyurov.matrix.Matrix;
 
 import java.util.Arrays;
 import java.util.Vector;

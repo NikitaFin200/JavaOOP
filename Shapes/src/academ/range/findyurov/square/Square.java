@@ -1,7 +1,7 @@
-package academ.findyurov.square;
+package academ.range.findyurov.square;
 
 
-import academ.findyurov.shapes.Shapes;
+import academ.range.findyurov.shapes.Shapes;
 
 public class Square implements Shapes {
 
