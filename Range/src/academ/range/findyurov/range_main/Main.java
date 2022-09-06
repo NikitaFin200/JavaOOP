@@ -2,6 +2,7 @@ package academ.range.findyurov.range_main;
 
 import academ.range.findyurov.range.Range;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -33,5 +34,22 @@ public class Main {
         double number = scanner.nextDouble();
 
         System.out.println(range.isInside(number));    // применение метода isInside
+
+        Range Range = new Range(15, 30);
+        Range Range2 = new Range(16, 28);
+
+        System.out.println("The length of the range from the initial number to the extreme.");
+        System.out.print(range.getLength());           // метод для вычисления длины диапазона
+
+        System.out.println();
+
+        System.out.println("Enter number between first number to last number:");
+        number = scanner.nextDouble();
+
+        System.out.println(range.isInside(number));    // применение метода isInside
+
+        System.out.println(Arrays.toString(range.getInterval(range.getFrom(), range.getTo(), Range2.getFrom(), Range2.getTo())));
+        System.out.println(Arrays.toString(range.getUnification(range.getFrom(), range.getTo(), Range2.getFrom(), Range2.getTo())));
+        System.out.println(Arrays.toString(range.getDifference(range.getFrom(), range.getTo(), Range2.getFrom(), Range2.getTo())));
     }
 }
